@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 // menu + logo + login + carrito
 const Header = () => {
     return (
-        <header>
+        <header className='sticky z-index-999'>
             <nav className='flex justify-between p-4 mx-4 '>
                 <img src='menu.svg' alt='menu' className='w-44px mostrar' />
                 <Link to="/" className='cursor-pointer'>
