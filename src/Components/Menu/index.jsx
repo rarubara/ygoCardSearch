@@ -8,12 +8,27 @@ const MenuButton = (props) => {
     )
 }
 
+const opciones = [
+    {
+        texto: "Vegano",
+        id: "veg-01"
+    },
+    {
+        texto: "Carnes",
+        id: "car-01"
+    },
+    {
+        texto: "Asiatica",
+        id: "asi-01"
+    }
+]
+
 const Menu = () => {
     return (
         <nav className="flex gap-4 justify-between w-full p-4 flex-wrap my-4">
-            <MenuButton texto="Vegano" />
-            <MenuButton texto="Carnes" />
-            <MenuButton texto="Asiatico" />
+            {
+                opciones.map(({ texto, id }) => (<MenuButton key={id} texto={texto} />))
+            }
         </nav>
     )
 }
