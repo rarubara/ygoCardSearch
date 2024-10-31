@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+
+import React from "react"
 
 
 const Card = (props) => {
     const { url = "", texto = "" } = props
     return (
-        <div className="flex justify-between p-4  gap-4 border border-green-700 max-width-90pc m-auto">
-            <img alt="img" src={url} className="w-10pc h-10pc" />
-            <p className="text-xl">
-                {texto}
-            </p>
-        </div>
-    )
+      <div className="flex justify-between p-4  gap-4 border border-green-700 width-70pc m-auto">
+        <img alt="img" src={url} className="w-10pc h-10pc" />
+        <p className="text-xl">{texto}</p>
+      </div>
+    );
 }
 
 const detalles = [

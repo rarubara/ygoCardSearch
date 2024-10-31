@@ -37,6 +37,28 @@
    margin-bottom: 1rem;
  }
 
+ .my-8 {
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+ }
+
+ .my-16 {
+   margin-top: 4rem;
+   margin-bottom: 4rem;
+ }
+
+ .h-100dvh {
+   height: 100dvh;
+ }
+
+ .h-40dvh {
+   height: 40dvh;
+ }
+
+ .width-40pc {
+   width: 40dvw;
+ }
+
  .px-4 {
    padding: 0 1rem;
  }
@@ -81,19 +103,22 @@
    max-width: 200px;
  }
 
-
  .max-width-250px {
-  max-width: 250px;
-}
-
-
- .max-width-90pc {
-   max-width: 90%;
+   max-width: 250px;
  }
 
-.w-200px{
-  width: 200px;
-}
+
+ .min-width-70pc {
+   min-width: 70%;
+ }
+
+ .width-70pc {
+   width: 70%;
+ }
+
+ .w-200px {
+   width: 200px;
+ }
 
  .m-auto {
    margin: auto;
@@ -105,16 +130,17 @@
 
 
  .yellow-200 {
-  color: yellow;
+   color: yellow;
  }
 
-.yellow-700 {
-color: yellowgreen
-}
-.bg-yellow-700 {
-  color: yellowgreen;
-  background: yellowgreen;
-  }
+ .yellow-700 {
+   color: yellowgreen
+ }
+
+ .bg-yellow-700 {
+   color: yellowgreen;
+   background: yellowgreen;
+ }
 
  .decoration-none {
    text-decoration: none;
@@ -153,6 +179,10 @@ color: yellowgreen
    height: 40dvh;
  }
 
+ .h-10dvh {
+   height: 10dvh;
+ }
+
  .h-50dvh {
    height: 50dvh;
  }
@@ -177,17 +207,25 @@ color: yellowgreen
    width: fit-content;
  }
 
+ .width-90pc {
+   width: 90%;
+ }
+
  .border {
    border: 1px solid transparent
+ }
+
+ .bg-white {
+   background: white;
  }
 
  .bg-green-700 {
    background: #7EDB64;
  }
 
-.texto-black {
-  color: black;
-}
+ .texto-black {
+   color: black;
+ }
 
  .border-green-700 {
    border: 1px solid #7EDB64
@@ -197,7 +235,7 @@ color: yellowgreen
    color: white;
  }
 
- .texto-
+
 
  .align-start {
    align-self: self-start;
@@ -207,6 +245,7 @@ color: yellowgreen
    position: relative;
    top: -250px;
  }
+
  .fixed {
    position: fixed;
  }
@@ -231,8 +270,16 @@ color: yellowgreen
    justify-self: center;
  }
 
+ .rounded-md {
+   border-radius: 5px;
+ }
+
  .rounded-lg {
    border-radius: 25px;
+ }
+
+ .border-none {
+   border: none;
  }
 
  .text-xl {
@@ -255,9 +302,21 @@ color: yellowgreen
    font-size: 2.5rem;
  }
 
-.decoration-none{
-  text-decoration: none;
-}
+ .text-12xl {
+   font-size: 6rem;
+ }
+
+ .text-10xl {
+   font-size: 4rem;
+ }
+
+ .text-center {
+   text-align: center;
+ }
+
+ .decoration-none {
+   text-decoration: none;
+ }
 
  .flex-wrap {
    flex-wrap: wrap;
