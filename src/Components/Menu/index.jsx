@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
+import React from "react"
+
 /* eslint-disable react/prop-types */
 const MenuButton = (props) => {
     const { texto } = props
     return (
-        <button type="button" className="bg-green-700 rounded-lg text-white min-with-200px max-width-250px px-4 py-2 border text-3xl">
+        <button type="button" className="bg-green-600 rounded-lg text-white min-w-52 max-w-72 px-4 py-2 border text-3xl">
             {texto}
         </button>
     )

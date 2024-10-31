@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+import React from "react"
+
 const HeroImage = () => {
     return (
         <img src="postre.webp" className="h-full cover-fit w-full" alt="postre principal" />
@@ -14,16 +17,12 @@ const HeroButton = () => {
 
 const HeroContent = () => {
     return (
-        <div className="flex flex-col justify-between gap-12 align-start z-index-100 relative w-fit mx-4 ">
-            <p className="text-white text-3xl">
-                Postres Saludables
-            </p>
-            <p className="text-white text-3xl">
-                Recomendacion
-            </p>
-            <HeroButton />
-        </div>
-    )
+      <div className="flex flex-col justify-between self-start top-0 z-[40] relative w-fit mx-4 ">
+        <p className="text-3xl">Postres Saludables</p>
+        <p className="text-3xl">Recomendacion</p>
+        <HeroButton />
+      </div>
+    );
 }
 
 const Hero = () => {

@@ -8,7 +8,7 @@ const Hlogin = () => {
     <header className="sticky z-index-999">
       <nav className="flex justify-between p-4 mx-4">
         <button
-          className=" green-700 text-3xl decoration-none w-200px mostrar"
+          className=" text-green-600 text-3xl  w-200px hidden md:block"
           onClick={() => navigate(-1)}
         >
           &lt; Atras
