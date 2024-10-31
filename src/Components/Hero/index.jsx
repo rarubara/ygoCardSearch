@@ -17,7 +17,7 @@ const HeroButton = () => {
 
 const HeroContent = () => {
     return (
-      <div className="flex flex-col justify-between self-start top-0 z-[40] relative w-fit mx-4 ">
+      <div className="flex flex-col justify-between self-start top-0 z-[40] relative w-fit mx-4  dark:bg-gray-900">
         <p className="text-3xl">Postres Saludables</p>
         <p className="text-3xl">Recomendacion</p>
         <HeroButton />

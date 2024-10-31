@@ -5,10 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 const Hlogin = () => {
   let navigate = useNavigate();
   return (
-    <header className="sticky z-index-999">
+    <header className="sticky z-100 top-0 bg-white dark:bg-gray-900">
       <nav className="flex justify-between p-4 mx-4">
         <button
-          className=" text-green-600 text-3xl  w-200px hidden md:block"
+          className=" text-green-600 text-3xl  w-200px block md:hidden"
           onClick={() => navigate(-1)}
         >
           &lt; Atras

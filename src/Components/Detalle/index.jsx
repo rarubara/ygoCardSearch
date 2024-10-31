@@ -7,9 +7,9 @@ import React from "react"
 const Card = (props) => {
     const { url = "", texto = "" } = props
     return (
-      <div className="flex justify-between  gap-4 border border-green-700 width-[70%] mx-3 p-1 rounded-md">
+      <div className="flex justify-between  gap-4 border border-green-700 width-[70%] mx-3 p-1 rounded-md dark:bg-gray-900">
         <img alt="img" src={url} className="w-[50%] h-[10%] rounded-md" />
-        <p className="text-xl">{texto}</p>
+        <p className="text-3xl dark:text-white justify-center text-center">{texto}</p>
       </div>
     );
 }
@@ -40,12 +40,12 @@ const detalles = [
 const Detalle = () => {
 
     return (
-        <div className="flex flex-col gap-4">
-            {
-                detalles.map(({ url, texto, id }) => (<Card key={id} url={url} texto={texto} />))
-            }
-        </div>
-    )
+      <div className="flex flex-col gap-4 dark:bg-gray-900">
+        {detalles.map(({ url, texto, id }) => (
+          <Card key={id} url={url} texto={texto} />
+        ))}
+      </div>
+    );
 }
 
 export default Detalle

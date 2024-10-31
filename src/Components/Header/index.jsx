@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useUser } from "../../Context/UserContexto";
 
 // menu + logo + login + carrito
 const Header = () => {
+      const { user, login, logout } = useUser();
     return (
-      <header className="sticky top-0 z-50 bg-white w-fit">
+      <header className="sticky top-0 z-50 bg-white w-fit dark:bg-gray-900">
         <nav className="flex justify-between p-4 w-dvw  ">
           <img
             src="menu.svg"
@@ -16,12 +18,21 @@ const Header = () => {
             <img src="logo.svg" alt="logo" />
           </Link>
           <section className="flex w-fit justify-center align-center">
-            <Link
-              to="/login"
-              className="place-self-center text-green-600 no-underline cursor-pointer"
-            >
-              Login
-            </Link>
+            {user ? (
+              <Link
+                to="/login"
+                className="place-self-center text-green-600 no-underline cursor-pointer"
+              >
+                {user.nombre}
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="place-self-center text-green-600 no-underline cursor-pointer"
+              >
+                Login
+              </Link>
+            )}
             <img
               src="cart.svg"
               alt="cart"

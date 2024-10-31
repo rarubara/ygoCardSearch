@@ -28,12 +28,12 @@ const opciones = [
 
 const Menu = () => {
     return (
-        <nav className="flex gap-4 justify-between w-full p-4 flex-wrap my-4">
-            {
-                opciones.map(({ texto, id }) => (<MenuButton key={id} texto={texto} />))
-            }
-        </nav>
-    )
+      <nav className="flex gap-4 justify-between w-full p-4 flex-wrap my-4 dark:bg-gray-900">
+        {opciones.map(({ texto, id }) => (
+          <MenuButton key={id} texto={texto} />
+        ))}
+      </nav>
+    );
 }
 
 export default Menu
