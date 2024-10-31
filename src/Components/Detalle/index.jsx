@@ -7,8 +7,8 @@ import React from "react"
 const Card = (props) => {
     const { url = "", texto = "" } = props
     return (
-      <div className="flex justify-between p-4  gap-4 border border-green-700 width-70pc m-auto">
-        <img alt="img" src={url} className="w-10pc h-10pc" />
+      <div className="flex justify-between p-4 gap-4 border border-green-700 width-[70%] m-auto">
+        <img alt="img" src={url} className="w-[10%] h-[10%]" />
         <p className="text-xl">{texto}</p>
       </div>
     );

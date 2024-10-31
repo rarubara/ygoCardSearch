@@ -5,21 +5,32 @@ import { Link } from 'react-router-dom'
 // menu + logo + login + carrito
 const Header = () => {
     return (
-        <header className='sticky z-index-999 bg-white'>
-            <nav className='flex justify-between p-4 mx-4 '>
-                <img src='menu.svg' alt='menu' className='w-44px mostrar' />
-                <Link to="/" className='cursor-pointer'>
-                <img src='logo.svg' alt='logo' />
-                </Link>
-                <section className='flex gap-4 justify-center align-center'>
-                    <Link to="/login" className='align-center green-700 decoration-none cursor-pointer'>
-                        Login
-                    </Link>
-                    <img src='cart.svg' alt='cart' className='w-44px cursor-pointer' />
-                </section>
-            </nav>
-        </header>
-    )
+      <header className="sticky top-0 z-50 bg-white w-fit">
+        <nav className="flex justify-between p-4 w-dvw  ">
+          <img
+            src="menu.svg"
+            alt="menu"
+            className="flex md:hidden justify-center"
+          />
+          <Link to="/" className="cursor-pointer">
+            <img src="logo.svg" alt="logo" />
+          </Link>
+          <section className="flex w-fit justify-center align-center">
+            <Link
+              to="/login"
+              className="place-self-center text-green-600 no-underline cursor-pointer"
+            >
+              Login
+            </Link>
+            <img
+              src="cart.svg"
+              alt="cart"
+              className=" flex w-[44px] cursor-pointer self-center "
+            />
+          </section>
+        </nav>
+      </header>
+    );
 }
 
 export default Header
