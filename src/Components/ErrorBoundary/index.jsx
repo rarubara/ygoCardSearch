@@ -29,15 +29,15 @@ const ErrorBoundary = () => {
             ¡Oops! Algo salió mal
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            {getErrorMessage()}
+            Error: {String(getErrorStatus())}
           </p>
         </div>
 
         <div className="space-y-4">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Error: {getErrorStatus()}
+            Error: {String(getErrorStatus())}
           </p>
-          
+
           <Link
             to="/"
             className="inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
