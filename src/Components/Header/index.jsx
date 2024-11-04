@@ -32,6 +32,16 @@ const Header = () => {
               </Link>
             </div>
 
+            {/* Center - Navigation Links */}
+            <div className="hidden md:flex items-center space-x-4">
+              <Link
+                to="/reservation"
+                className="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors dark:text-gray-200 dark:hover:text-green-400"
+              >
+                Reservar Mesa
+              </Link>
+            </div>
+
             {/* Right side - Auth and Cart */}
             <div className="flex items-center space-x-2 sm:space-x-4">
               {user ? (
@@ -67,6 +77,12 @@ const Header = () => {
           {/* Mobile menu */}
           <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
             <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                to="/reservation"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 dark:text-gray-200 dark:hover:text-green-400 dark:hover:bg-gray-700"
+              >
+                Reservar Mesa
+              </Link>
               {user && (
                 <span className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200">
                   {user.nombre}

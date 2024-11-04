@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
@@ -8,6 +9,7 @@ import ErrorBoundary from '../../Components/ErrorBoundary'
 const Home = React.lazy(() => import('../Home'))
 const Login = React.lazy(() => import('../Login'))
 const Register = React.lazy(() => import('../Register'))
+const Reservation = React.lazy(() => import('../Reservation'))
 
 // Loading component
 const LoadingSpinner = () => (
@@ -33,6 +35,11 @@ const AppRoutes = () => {
       <Routes>
         {/* Public routes */}
         <Route 
+          path="/" 
+          element={<Home />}
+          errorElement={<ErrorBoundary />}
+        />
+        <Route 
           path="/login" 
           element={<Login />}
           errorElement={<ErrorBoundary />}
@@ -45,10 +52,10 @@ const AppRoutes = () => {
 
         {/* Protected routes */}
         <Route
-          path="/"
+          path="/reservation"
           element={
             <ProtectedRoute>
-              <Home />
+              <Reservation />
             </ProtectedRoute>
           }
           errorElement={<ErrorBoundary />}
