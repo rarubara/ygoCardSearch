@@ -5,7 +5,10 @@ import React from "react"
 const MenuButton = (props) => {
     const { texto } = props
     return (
-        <button type="button" className="bg-green-600 rounded-lg text-white min-w-52 max-w-72 px-4 py-2 border text-3xl">
+        <button 
+            type="button" 
+            className="bg-green-600 hover:bg-green-700 transition-colors rounded-lg text-white px-6 py-3 text-lg font-medium shadow-md hover:shadow-lg flex-1 min-w-[200px] max-w-[280px]"
+        >
             {texto}
         </button>
     )
@@ -28,11 +31,15 @@ const opciones = [
 
 const Menu = () => {
     return (
-      <nav className="flex gap-4 justify-between w-full p-4 flex-wrap my-4 dark:bg-gray-900">
-        {opciones.map(({ texto, id }) => (
-          <MenuButton key={id} texto={texto} />
-        ))}
-      </nav>
+        <section className="bg-gray-50 dark:bg-gray-900 py-12">
+            <div className="max-w-7xl mx-auto px-4">
+                <nav className="flex flex-wrap justify-center gap-6">
+                    {opciones.map(({ texto, id }) => (
+                        <MenuButton key={id} texto={texto} />
+                    ))}
+                </nav>
+            </div>
+        </section>
     );
 }
 

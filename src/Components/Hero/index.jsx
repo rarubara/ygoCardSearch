@@ -3,34 +3,49 @@ import React from "react"
 
 const HeroImage = () => {
     return (
-        <img src="postre.webp" className="h-full cover-fit w-full" alt="postre principal" />
+        <div className="absolute inset-0">
+            <img 
+                src="postre.webp" 
+                className="h-full w-full object-cover brightness-75" 
+                alt="postre principal" 
+            />
+        </div>
     )
 }
 
 const HeroButton = () => {
     return (
-            <button type="button" className="bg-green-700 rounded-lg text-white min-with-200px max-width-250px px-4 py-2 border text-3xl">
-                Reservar
-            </button>
+        <button 
+            type="button" 
+            className="bg-green-600 hover:bg-green-700 transition-colors rounded-lg text-white px-8 py-3 text-xl font-semibold shadow-lg hover:shadow-xl"
+        >
+            Reservar
+        </button>
     )
 }
 
 const HeroContent = () => {
     return (
-      <div className="flex flex-col justify-between self-start top-0 z-[40] relative w-fit mx-4  dark:bg-gray-900">
-        <p className="text-3xl">Postres Saludables</p>
-        <p className="text-3xl">Recomendacion</p>
-        <HeroButton />
-      </div>
-    );
+        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex flex-col justify-center">
+            <div className="max-w-xl space-y-6">
+                <h1 className="text-white text-5xl font-bold leading-tight">
+                    Postres Saludables
+                </h1>
+                <p className="text-white/90 text-2xl">
+                    Recomendacion
+                </p>
+                <HeroButton />
+            </div>
+        </div>
+    )
 }
 
 const Hero = () => {
     return (
-        <div className="h-50dvh">
+        <section className="relative h-[80vh] bg-gray-900">
             <HeroImage />
             <HeroContent />
-        </div>
+        </section>
     )
 }
 
