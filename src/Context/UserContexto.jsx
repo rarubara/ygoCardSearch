@@ -4,32 +4,63 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useState } from "react";
 
-// 1. Crear el contexto de usuario
 const UserContext = createContext();
 
-// 2. Crear el proveedor de contexto de usuario
 const UserProvider = ({ children }) => {
-  // `user` almacena la información del usuario, y `setUser` permite actualizarlo.
   const [user, setUser] = useState(null);
+  const [registeredUsers, setRegisteredUsers] = useState([]);
 
-  // 3. Función para iniciar sesión
-  const login = (userData) => {
-    if (!userData.nombre) {
-      throw new Error("El nombre de usuario es requerido");
+  const register = (userData) => {
+    if (!userData.nombre || !userData.password || !userData.email) {
+      throw new Error("Todos los campos son requeridos");
     }
+
+    // Check if user already exists
+    const userExists = registeredUsers.some(
+      (user) => user.email === userData.email || user.nombre === userData.nombre
+    );
+
+    if (userExists) {
+      throw new Error("El usuario ya existe");
+    }
+
+    // Add new user to registered users
+    setRegisteredUsers([...registeredUsers, userData]);
+    
+    // Automatically login after registration
     setUser(userData);
+    return true;
   };
 
-  // 4. Función para cerrar sesión
+  const login = (userData) => {
+    if (!userData.nombre || !userData.password) {
+      throw new Error("Usuario y contraseña son requeridos");
+    }
+
+    // Find user in registered users
+    const foundUser = registeredUsers.find(
+      (user) => 
+        user.nombre === userData.nombre && 
+        user.password === userData.password
+    );
+
+    if (!foundUser) {
+      throw new Error("Usuario o contraseña incorrectos");
+    }
+
+    setUser(foundUser);
+    return true;
+  };
+
   const logout = () => {
     setUser(null);
   };
 
-  // 5. Valor del contexto que incluye el estado y las funciones
   const value = {
     user,
     login,
     logout,
+    register,
     isAuthenticated: !!user
   };
 
@@ -40,7 +71,6 @@ const UserProvider = ({ children }) => {
   );
 };
 
-// 6. Hook personalizado para usar el contexto de usuario
 const useUser = () => {
   const context = useContext(UserContext);
   if (context === undefined) {

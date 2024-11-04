@@ -1,13 +1,68 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useUser } from '../../Context/UserContexto'
+import ErrorBoundary from '../../Components/ErrorBoundary'
 
-const Ruta = () => {
+// Lazy load components for better performance
+const Home = React.lazy(() => import('../Home'))
+const Login = React.lazy(() => import('../Login'))
+const Register = React.lazy(() => import('../Register'))
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+  </div>
+);
+
+// Protected Route component
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useUser();
+  
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
+const AppRoutes = () => {
   return (
-    <div>
-      <p>Nueva ruta!!!!!</p>
-    </div>
-  )
-}
+    <React.Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        {/* Public routes */}
+        <Route 
+          path="/login" 
+          element={<Login />}
+          errorElement={<ErrorBoundary />}
+        />
+        <Route 
+          path="/register" 
+          element={<Register />}
+          errorElement={<ErrorBoundary />}
+        />
 
-export default Ruta 
+        {/* Protected routes */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+          errorElement={<ErrorBoundary />}
+        />
 
+        {/* Catch all route - redirect to error page */}
+        <Route 
+          path="*" 
+          element={<ErrorBoundary />} 
+        />
+      </Routes>
+    </React.Suspense>
+  );
+};
+
+export default AppRoutes;
