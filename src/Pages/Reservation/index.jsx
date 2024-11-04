@@ -17,6 +17,7 @@ const Table = ({ number, onSelect }) => (
 );
 
 const ReservationForm = () => {
+  // @ts-ignore
   const { availableDishes, makeReservation } = useTable();
   const [selectedTable, setSelectedTable] = useState(null);
   const [date, setDate] = useState('');

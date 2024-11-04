@@ -1,9 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useUser } from "./UserContexto";
 
-const TableContext = createContext();
+const TableContext = createContext(null);
 
 const initialDishes = [
   { id: 1, name: "Pasta Carbonara", price: 15.99 },
@@ -33,12 +33,14 @@ const TableProvider = ({ children }) => {
       createdAt: new Date().toISOString()
     };
 
+    // @ts-ignore
     setReservations(prev => [...prev, newReservation]);
     return newReservation;
   };
 
   const getUserReservations = () => {
     if (!user) return [];
+    // @ts-ignore
     return reservations.filter(res => res.userId === user.nombre);
   };
 
@@ -50,7 +52,9 @@ const TableProvider = ({ children }) => {
   };
 
   return (
-    <TableContext.Provider value={value}>
+    <
+// @ts-ignore
+    TableContext.Provider value={value}>
       {children}
     </TableContext.Provider>
   );
