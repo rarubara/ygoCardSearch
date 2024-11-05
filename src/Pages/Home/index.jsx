@@ -12,6 +12,7 @@ const Home = () => {
       <Hero />
       <Menu />
       <Detalle />
+      {/* AQUI VA EL FOOTER */}
     </>
   )
 }
