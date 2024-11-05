@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
+import { useNavigate } from "react-router-dom";
 
 const HeroImage = () => {
     return (
@@ -14,10 +15,14 @@ const HeroImage = () => {
 }
 
 const HeroButton = () => {
+    let navigate = useNavigate();
     return (
         <button 
             type="button" 
             className="bg-green-600 hover:bg-green-700 transition-colors rounded-lg text-white px-8 py-3 text-xl font-semibold shadow-lg hover:shadow-xl"
+            onClick={() => {
+                navigate("/reservation");
+            }}
         >
             Reservar
         </button>
