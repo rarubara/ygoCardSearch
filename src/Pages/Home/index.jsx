@@ -4,6 +4,7 @@ import Detalle from "../../Components/Detalle"
 import Header from "../../Components/Header"
 import Hero from "../../Components/Hero"
 import Menu from "../../Components/Menu"
+import Footer from "../../Components/Footer"
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <Hero />
       <Menu />
       <Detalle />
-      {/* AQUI VA EL FOOTER */}
+      <Footer/>
     </>
   )
 }

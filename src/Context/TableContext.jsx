@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
@@ -10,7 +11,7 @@ const initialDishes = [
   { id: 2, name: "Salmon a la Parrilla", price: 22.99 },
   { id: 3, name: "Ensalada César", price: 12.99 },
   { id: 4, name: "Risotto de Champiñones", price: 18.99 },
-  { id: 5, name: "Pollo al Limón", price: 16.99 }
+  { id: 5, name: "Pollo al Limón", price: 16.99 },
 ];
 
 const TableProvider = ({ children }) => {
@@ -30,34 +31,29 @@ const TableProvider = ({ children }) => {
       date,
       time,
       dish: selectedDish,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
 
     // @ts-ignore
-    setReservations(prev => [...prev, newReservation]);
+    setReservations((prev) => [...prev, newReservation]);
     return newReservation;
   };
 
   const getUserReservations = () => {
     if (!user) return [];
     // @ts-ignore
-    return reservations.filter(res => res.userId === user.nombre);
+    return reservations.filter((res) => res.userId === user.nombre);
   };
 
   const value = {
     reservations,
     availableDishes,
     makeReservation,
-    getUserReservations
+    getUserReservations,
   };
 
-  return (
-    <
-// @ts-ignore
-    TableContext.Provider value={value}>
-      {children}
-    </TableContext.Provider>
-  );
+  const Provider = TableContext.Provider;
+  return <Provider value={value}>{children}</Provider>;
 };
 
 const useTable = () => {

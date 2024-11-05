@@ -26,7 +26,7 @@ const UserProvider = ({ children }) => {
 
     // Add new user to registered users
     setRegisteredUsers([...registeredUsers, userData]);
-    
+
     // Automatically login after registration
     setUser(userData);
     return true;
@@ -39,9 +39,8 @@ const UserProvider = ({ children }) => {
 
     // Find user in registered users
     const foundUser = registeredUsers.find(
-      (user) => 
-        user.nombre === userData.nombre && 
-        user.password === userData.password
+      (user) =>
+        user.nombre === userData.nombre && user.password === userData.password
     );
 
     if (!foundUser) {
@@ -61,14 +60,12 @@ const UserProvider = ({ children }) => {
     login,
     logout,
     register,
-    isAuthenticated: !!user
+    isAuthenticated: !!user,
   };
 
-  return (
-    <UserContext.Provider value={value}>
-      {children}
-    </UserContext.Provider>
-  );
+  const Provider = UserContext.Provider;
+
+  return <Provider value={value}>{children}</Provider>;
 };
 
 const useUser = () => {
