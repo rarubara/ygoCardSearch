@@ -5,6 +5,8 @@ import Header from "../../Components/Header"
 import Hero from "../../Components/Hero"
 import Menu from "../../Components/Menu"
 import Footer from "../../Components/Footer"
+import ComboBoxLang from "../../Components/ComboBoxLang"
+import SearchBar from "../../Components/SearchBar"
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
       <Hero />
       <Menu />
       <Detalle />
+      <ComboBoxLang/>
+      <SearchBar/>
       <Footer/>
     </>
   )
