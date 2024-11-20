@@ -14,9 +14,7 @@ const Home = () => {
       <Header />
       <Hero />
       <Menu />
-      <Detalle />
-      <ComboBoxLang/>
-      <SearchBar/>
+      <Detalle />      
       <Footer/>
     </>
   )

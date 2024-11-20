@@ -2,6 +2,8 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../SearchBar";
+import ComboBoxLang from "../ComboBoxLang";
+import '../../../styles.css';  // Import your CSS file
 
 const HeroImage = () => {
     return (
@@ -19,8 +21,8 @@ const HeroButton = () => {
     let navigate = useNavigate();
     return (
         <button 
-            type="button" 
-            className="bg-green-600 hover:bg-green-700 transition-colors rounded-lg text-white px-8 py-3 text-xl font-semibold shadow-lg hover:shadow-xl"
+            type="button"             
+            className="bg-gradient-to-br from-orange-500 to-black hover:from-orange-300 hover:to-gray-800 transition-colors rounded-lg text-white px-8 py-3 text-xl font-semibold shadow-lg hover:shadow-xl"
             onClick={() => {
                 navigate("/reservation");
             }}
@@ -29,6 +31,16 @@ const HeroButton = () => {
         </button>
     )
 }
+
+const CardRow = () => {
+    return (
+      <div className="cardrow">
+        <div className="cardrow-description">
+          This description is visible only on large screens.
+        </div>
+      </div>
+    );
+  };
 
 const HeroContent = () => {
     return (
@@ -45,9 +57,13 @@ const HeroContent = () => {
                 `}</style>
                 <p className="text-white/90 text-2xl">
                     just write the name or card description to search
-                </p>                
-                <SearchBar />
-                <HeroButton />
+                </p>                      
+                <ComboBoxLang/>
+                <flex className="flex width-full items-center space-x-4">                    
+                    <SearchBar />                                                            
+                </flex>          
+                <HeroButton />     
+                <CardRow />                           
             </div>
         </div>
     )

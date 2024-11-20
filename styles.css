@@ -1,0 +1,11 @@
+/* Default style */
+.cardrow-description {
+    visibility: hidden;
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    .cardrow-description {
+        visibility: visible;
+    }
+}

@@ -9,7 +9,7 @@ const ComboBoxLang = () => {
 
   return (
     <div>
-      <label htmlFor="language-select" className="font-bold">Language:</label>
+      <label htmlFor="language-select" className="font-bold text-white">Language:</label>
       <select
         id="language-select"
         value={selectedLanguage}

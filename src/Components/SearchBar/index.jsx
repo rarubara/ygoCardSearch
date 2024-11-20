@@ -13,9 +13,9 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="flex items-center">
-      <label htmlFor="search-input" className="font-bold mr-2">
+      <label htmlFor="search-input" className="font-bold mr-2 text-white">
         Search:
-      </label>
+      </label>      
       <input
         type="text"
         id="search-input"
