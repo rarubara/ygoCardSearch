@@ -9,3 +9,18 @@
         visibility: visible;
     }
 }
+
+#card-table {
+    display: table;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: #565769;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }

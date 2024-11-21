@@ -7,13 +7,14 @@ import Menu from "../../Components/Menu"
 import Footer from "../../Components/Footer"
 import ComboBoxLang from "../../Components/ComboBoxLang"
 import SearchBar from "../../Components/SearchBar"
-
+import CardTable from "../../Components/CardTable"
 const Home = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <Hero />      
       <Menu />
+      <CardTable />
       <Detalle />      
       <Footer/>
     </>
