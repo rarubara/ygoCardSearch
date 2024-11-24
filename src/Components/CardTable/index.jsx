@@ -1,144 +1,66 @@
 import React from "react";
+import {Table, TableBody, TableRow, TableHead, TableCell, TableHeader, TableFooter, TableCaption} from "../ui/table";
 
 const CardTable = () => {
-    const cards = [
-        {
-            name: "Kuriboh",
-            image: "https://cdn.formatlibrary.com/images/medium_cards/40640057.jpg",
-            attributes: [
-                {
-                    icon: "https://cdn.formatlibrary.com/images/symbols/dark.png",
-                    text: "DARK",
-                },
-                {
-                    icon: "https://cdn.formatlibrary.com/images/symbols/star.png",
-                    text: "Lv1",
-                },
-                {
-                    icon: "https://cdn.formatlibrary.com/images/symbols/fiend.png",
-                    text: "Fiend",
-                },
-            ],
-            stats: { atk: 300, def: 200 },
-            link: "/cards/kuriboh",
-        },
-        {
-            name: "Winged Kuriboh",
-            image: "https://cdn.formatlibrary.com/images/medium_cards/57116033.jpg",
-            attributes: [
-                {
-                    icon: "https://cdn.formatlibrary.com/images/symbols/light.png",
-                    text: "LIGHT",
-                },
-                {
-                    icon: "https://cdn.formatlibrary.com/images/symbols/star.png",
-                    text: "Lv1",
-                },
-                {
-                    icon: "https://cdn.formatlibrary.com/images/symbols/fairy.png",
-                    text: "Fairy",
-                },
-            ],
-            stats: { atk: 300, def: 200 },
-            link: "/cards/winged-kuriboh",
-        },
-    ];
-
-    return (
-        <div id="card-table">
-            <table id="cards">
-                <tbody>
-                    {cards.map((card, index) => (
-                        <tr
-                            key={card.name}
-                            className={index % 2 === 0 ? "even-search-results-row" : "odd-search-results-row"}
-                        >
-                            <td className="no-padding-2" style={{ verticalAlign: "top" }}>
-                                <a
-                                    className="search-results-link"
-                                    rel="noopener noreferrer"
-                                    href={card.link}
-                                    target="_blank"
-                                >
-                                    <div className="card-image-cell">
-                                        <img
-                                            className="card-image"
-                                            src={card.image}
-                                            style={{ width: "82px" }}
-                                            alt={card.name}
-                                        />
-                                    </div>
-                                </a>
-                            </td>
-                            <td className="no-padding-2" style={{ verticalAlign: "top" }}>
-                                <a
-                                    className="search-results-link"
-                                    rel="noopener noreferrer"
-                                    href={card.link}
-                                    target="_blank"
-                                >
-                                    <table className="inner-cardRow-table">
-                                        <tbody>
-                                            <tr>
-                                                <th
-                                                    colSpan="5"
-                                                    style={{
-                                                        textAlign: "left",
-                                                        fontSize: "24px",
-                                                        borderBottom: "2px solid rgb(207, 220, 229)",
-                                                    }}
-                                                >
-                                                    {card.name}
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                {card.attributes.map((attr, attrIndex) => (
-                                                    <td
-                                                        key={attrIndex}
-                                                        height="25px"
-                                                        width="120px"
-                                                        style={{
-                                                            borderRight: "2px solid rgb(207, 220, 229)",
-                                                        }}
-                                                    >
-                                                        <img
-                                                            src={attr.icon}
-                                                            height="24px"
-                                                            style={{ verticalAlign: "middle" }}
-                                                            alt="symbol"
-                                                        />{" "}
-                                                        {attr.text}
-                                                    </td>
-                                                ))}
-                                                <td
-                                                    height="25px"
-                                                    width="100px"
-                                                    style={{
-                                                        borderRight: "2px solid rgb(207, 220, 229)",
-                                                    }}
-                                                >
-                                                    ATK: {card.stats.atk}
-                                                </td>
-                                                <td
-                                                    height="25px"
-                                                    width="100px"
-                                                    style={{
-                                                        borderRight: "2px solid rgb(207, 220, 229)",
-                                                    }}
-                                                >
-                                                    DEF: {card.stats.def}
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </a>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+    return(
+        <div className="max-w-full mx-auto px-4 py-6">
+            <Table className="w-full border border-gray-300 rounded-lg">
+            <TableCaption>Cards found</TableCaption>        
+                <TableHeader>
+                    <TableRow className="border-b">                    
+                        <TableCell colSpan={2} className="text-lg font-bold">
+                            Bickuribox
+                        </TableCell>
+                        <TableCell colSpan={3} className="text-right text-gray-500">
+                            TCG Release: 2002-06-26
+                        </TableCell>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow>
+                        <TableCell rowSpan={2} className="p-2">
+                        <img
+                            src="https://cdn.formatlibrary.com/images/medium_cards/34853266.jpg"
+                            alt="Bickuribox"
+                            className="w-20 h-auto"
+                        />
+                        </TableCell>
+                        <TableCell className="p-2 flex items-center gap-2 border-r">
+                        <img
+                            src="https://cdn.formatlibrary.com/images/symbols/dark.png"
+                            alt="DARK"
+                            className="w-6 h-6"
+                        />
+                        DARK
+                        </TableCell>
+                        <TableCell className="p-2 flex items-center gap-2 border-r">
+                        <img
+                            src="https://cdn.formatlibrary.com/images/symbols/star.png"
+                            alt="Level 7"
+                            className="w-6 h-6"
+                        />
+                        Level 7
+                        </TableCell>
+                        <TableCell className="p-2 flex items-center gap-2 border-r">
+                        <img
+                            src="https://cdn.formatlibrary.com/images/symbols/fiend.png"
+                            alt="Fiend / Fusion"
+                            className="w-6 h-6"
+                        />
+                        Fiend / Fusion
+                        </TableCell>
+                        <TableCell className="p-2 border-r">ATK: 2300</TableCell>
+                        <TableCell className="p-2">DEF: 2000</TableCell>
+                    </TableRow>
+                    <TableRow className="hidden md:table-row">
+                        <TableCell colSpan={5} className="p-2 text-center italic text-gray-500">
+                        "Crass Clown" + "Dream Clown"
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
         </div>
-    );
-};
+    )
+}
 
 export default CardTable;

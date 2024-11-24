@@ -8,13 +8,14 @@ import Footer from "../../Components/Footer"
 import ComboBoxLang from "../../Components/ComboBoxLang"
 import SearchBar from "../../Components/SearchBar"
 import CardTable from "../../Components/CardTable"
+import TestTable from "../../Components/TestTable"
 const Home = () => {
   return (
     <>
       <Header />
       <Hero />      
-      <Menu />
       <CardTable />
+      <Menu />            
       <Detalle />      
       <Footer/>
     </>
