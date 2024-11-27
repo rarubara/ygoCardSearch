@@ -7,24 +7,27 @@ const SearchBar = ({ onSearch }) => {
     const newQuery = event.target.value;
     setQuery(newQuery);
     if (onSearch) {
-      onSearch(newQuery);  // Trigger search as user types
+      onSearch(newQuery); // Trigger search as user types
     }
   };
 
   return (
-    <div className="flex items-center">
-      <label htmlFor="search-input" className="font-bold mr-2 text-white">
-        Search:
-      </label>      
-      <input
-        type="text"
-        id="search-input"
-        value={query}
-        onChange={handleInputChange}
-        placeholder="Type to search..."
-        className="p-2 border rounded-md shadow-sm focus:outline-none"
-      />
-    </div>
+    <>
+      <div className="flex items-center">
+        <label htmlFor="search-input" className="font-bold mr-2 text-white">
+          Search:
+        </label>
+        <input
+          type="text"
+          id="search-input"
+          value={query}
+          onChange={handleInputChange}
+          placeholder="Type to search..."
+          className="p-2 border rounded-md shadow-sm focus:outline-none"
+        />
+      </div>
+      <p className="mt-2 text-gray-700">Search Query: {query}</p> {/* Display the query */}
+    </>
   );
 };
 
