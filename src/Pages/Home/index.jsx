@@ -8,6 +8,7 @@ import Footer from "../../Components/Footer";
 import ComboBoxLang from "../../Components/ComboBoxLang";
 import CardTable from "../../Components/CardTable";
 import ExampleComponent from "../../Components/ExampleComponent";
+import CardDemo from "../../Components/CardDemo";
 
 const Home = () => {
   const [query, setQuery] = useState(''); // State to manage the search query
@@ -20,7 +21,7 @@ const Home = () => {
       <CardTable searchQuery={query} /> {/* Pass query to CardTable */}
 
       {/* Additional Components */}
-      <ExampleComponent />
+      <ExampleComponent />      
       <Footer />
     </>
   );

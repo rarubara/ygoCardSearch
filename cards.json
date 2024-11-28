@@ -1,0 +1,159 @@
+[
+    {
+      "name": "Bickuribox",
+      "releaseDate": "2002-06-26",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/25655502.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 7,
+        "category": "Fiend / Fusion",
+        "atk": 2300,
+        "def": 2000
+      },
+      "description": "\"Crass Clown\" + \"Dream Clown\""
+    },
+    {
+      "name": "Sangan",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/26202165.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 3,
+        "category": "Fiend",
+        "atk": 1000,
+        "def": 600
+      },
+      "description": "When this card is sent from the field to the Graveyard, add 1 monster with 1500 or less ATK from your Deck to your hand."
+    },
+    {
+      "name": "Witch of the Black Forest",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/78010363.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 4,
+        "category": "Spellcaster",
+        "atk": 1100,
+        "def": 1200
+      },
+      "description": "When this card is sent from the field to the Graveyard, add 1 monster with 1500 or less DEF from your Deck to your hand."
+    },
+    {
+      "name": "Dark Magician",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/46986414.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 7,
+        "category": "Spellcaster",
+        "atk": 2500,
+        "def": 2100
+      },
+      "description": "The ultimate wizard in terms of attack and defense."
+    },
+    {
+      "name": "Dark Magician Girl",
+      "releaseDate": "2003-04-15",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/38033121.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 6,
+        "category": "Spellcaster",
+        "atk": 2000,
+        "def": 1700
+      },
+      "description": "Gains 300 ATK for every 'Dark Magician' or 'Magician of Black Chaos' in the Graveyard."
+    },
+    {
+      "name": "Kuriboh",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/40640057.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 1,
+        "category": "Fiend",
+        "atk": 300,
+        "def": 200
+      },
+      "description": "Discard this card to make the battle damage you take from 1 opponent's monster 0."
+    },
+    {
+      "name": "Blue-Eyes White Dragon",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/89631139.jpg",
+      "attributes": {
+        "type": "LIGHT",
+        "level": 8,
+        "category": "Dragon",
+        "atk": 3000,
+        "def": 2500
+      },
+      "description": "This legendary dragon is a powerful engine of destruction."
+    },
+    {
+      "name": "Red-Eyes Black Dragon",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/74677422.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 7,
+        "category": "Dragon",
+        "atk": 2400,
+        "def": 2000
+      },
+      "description": "A ferocious dragon with a deadly attack."
+    },
+    {
+      "name": "Tsukuyomi",
+      "releaseDate": "2004-06-01",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/34853266.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 4,
+        "category": "Spellcaster / Spirit",
+        "atk": 1100,
+        "def": 1400
+      },
+      "description": "This card cannot be Special Summoned. It returns to the hand during the End Phase of the turn it is Normal Summoned or flipped face-up."
+    },
+    {
+      "name": "Cyber-Stein",
+      "releaseDate": "2004-04-03",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/69015963.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 2,
+        "category": "Machine",
+        "atk": 700,
+        "def": 500
+      },
+      "description": "Pay 5000 Life Points to Special Summon 1 Fusion Monster from your Extra Deck."
+    },
+    {
+      "name": "Cyber Jar",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/34124316.jpg",
+      "attributes": {
+        "type": "DARK",
+        "level": 3,
+        "category": "Rock",
+        "atk": 900,
+        "def": 900
+      },
+      "description": "Flip: Destroy all monsters on the field, then both players reveal the top 5 cards of their Decks."
+    },
+    {
+      "name": "Morphing Jar",
+      "releaseDate": "2002-03-29",
+      "imageUrl": "https://cdn.formatlibrary.com/images/medium_cards/33508719.jpg",
+      "attributes": {
+        "type": "EARTH",
+        "level": 2,
+        "category": "Rock",
+        "atk": 700,
+        "def": 600
+      },
+      "description": "Flip: Both players discard their hands, then draw 5 cards."
+    }
+]
+  

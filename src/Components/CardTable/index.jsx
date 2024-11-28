@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Table, TableBody, TableRow, TableHead, TableCell, TableHeader, TableCaption } from "../ui/table";
+import axios from "axios";
 
 const CardTable = ({ searchQuery }) => {
-    // Example dataset (replace with actual data from props or API)
-    const cards = [
-        {
-            name: "Bickuribox",
-            releaseDate: "2002-06-26",
-            imageUrl: "https://cdn.formatlibrary.com/images/medium_cards/25655502.jpg",
-            attributes: {
-                type: "DARK",
-                level: 7,
-                category: "Fiend / Fusion",
-                atk: 2300,
-                def: 2000,
-            },
-            description: `"Crass Clown" + "Dream Clown"`,
-        },
-        // Add more cards as needed
-    ];
+    // State to store cards fetched from API
+    const [cards, setCards] = useState([]);
+    const [loading, setLoading] = useState(true); // State for loading indicator
+    const [error, setError] = useState(null); // State for error handling
 
-    // Filter cards based on searchQuery
+    // Fetch data from API using Axios
+    useEffect(() => {
+        const fetchCards = async () => {
+            try {
+                const response = await axios.get("https://api.npoint.io/05f3068bb73af58c01f5");
+                setCards(response.data); // Store the fetched data in the state
+            } catch (err) {
+                setError(err.message); // Handle any error that might occur
+            } finally {
+                setLoading(false); // Set loading to false once the request is complete
+            }
+        };
+
+        fetchCards(); // Call the fetch function
+    }, []); // Empty array to fetch the data only once on component mount
+
+    // Filter cards based on the searchQuery
     const filteredCards = cards.filter((card) =>
         card.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
+    // Handle loading and error states
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (
         <div className="max-w-full mx-auto px-4 py-6">
@@ -46,6 +54,7 @@ const CardTable = ({ searchQuery }) => {
                             <React.Fragment key={index}>
                                 <TableRow>
                                     <TableCell rowSpan={2} className="p-2">
+                                        <span className="text-lg font-bold">{card.name}</span>
                                         <img
                                             src={card.imageUrl}
                                             alt={card.name}
@@ -53,11 +62,6 @@ const CardTable = ({ searchQuery }) => {
                                         />
                                     </TableCell>
                                     <TableCell className="p-2 flex items-center gap-2 border-r">
-                                        <img
-                                            src="https://cdn.formatlibrary.com/images/symbols/dark.png"
-                                            alt={card.attributes.type}
-                                            className="w-6 h-6"
-                                        />
                                         {card.attributes.type}
                                     </TableCell>
                                     <TableCell className="p-2 flex items-center gap-2 border-r">
@@ -69,11 +73,6 @@ const CardTable = ({ searchQuery }) => {
                                         Level {card.attributes.level}
                                     </TableCell>
                                     <TableCell className="p-2 flex items-center gap-2 border-r">
-                                        <img
-                                            src="https://cdn.formatlibrary.com/images/symbols/fiend.png"
-                                            alt={card.attributes.category}
-                                            className="w-6 h-6"
-                                        />
                                         {card.attributes.category}
                                     </TableCell>
                                     <TableCell className="p-2 border-r">
