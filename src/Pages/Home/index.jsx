@@ -21,7 +21,6 @@ const Home = () => {
       <CardTable searchQuery={query} /> {/* Pass query to CardTable */}
 
       {/* Additional Components */}
-      <ExampleComponent />      
       <Footer />
     </>
   );
