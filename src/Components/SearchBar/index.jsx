@@ -25,8 +25,7 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Type to search..."
           className="p-2 border rounded-md shadow-sm focus:outline-none"
         />
-      </div>
-      <p className="mt-2 text-gray-700">Search Query: {query}</p> {/* Display the query */}
+      </div>      
     </>
   );
 };

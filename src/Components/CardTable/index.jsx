@@ -34,8 +34,7 @@ const CardTable = ({ searchQuery }) => {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className="max-w-full mx-auto px-4 py-6">
-            <p>Search Query: {searchQuery}</p> {/* Display the search query */}
+        <div className="max-w-full mx-auto px-4 py-6">            
             <Table className="w-full border border-gray-300 rounded-lg">
                 <TableCaption>Cards found</TableCaption>
                 <TableHeader>
@@ -80,7 +79,7 @@ const CardTable = ({ searchQuery }) => {
                                     </TableCell>
                                     <TableCell className="p-2">DEF: {card.attributes.def}</TableCell>
                                 </TableRow>
-                                <TableRow className="hidden md:table-row">
+                                <TableRow>
                                     <TableCell colSpan={5} className="p-2 text-center italic text-gray-500">
                                         {card.description}
                                     </TableCell>
